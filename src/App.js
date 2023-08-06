@@ -1,22 +1,16 @@
-import React, { useState } from "react";
-import CurrentLocation from "./currentLocation";
-import "./App.css";
-
+import { Routes, Route } from "react-router-dom"
+import Weather from "./screens/Weather";
+import React from 'react'
+import Home from "./screens/Home";
 
 function App() {
   return (  
-    <React.Fragment>
-    
-      <div className="container">
-        <CurrentLocation />
+    <div>
+        <Routes>
+        <Route path="/" element={ <Home/> } />
+        <Route path="/weather" element={ <Weather/> } />        
+      </Routes>
       </div>
-      <div className="footer-info">
-        {" "}
-        {" "}
-        {" "}
-       
-      </div>
-    </React.Fragment>
   );
 }
 

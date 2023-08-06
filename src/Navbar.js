@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./navbar.css";
 import {
   FaFacebookSquare,
@@ -33,7 +34,7 @@ const Navbar = () => {
           }>
           <ul>
             <li>
-              <a href="=Home">Home</a>
+              <Link to="/">Home</Link>
             </li>
             <li>
               <a href="=Home">Weather</a>
