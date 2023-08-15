@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import logo from "./Logo.jpg"
 import "./navbar.css";
 import {
   FaFacebookSquare,
@@ -9,44 +10,42 @@ import {
 import { GiHamburgerMenu } from "react-icons/gi";
 import { useAuth0 } from "@auth0/auth0-react";
 
-const Navbar = () => {
 
+const Navbar = () => {
   const { loginWithRedirect, isAuthenticated, logout, user } = useAuth0();
   console.log("logged in user", user);
+  console.log("user is Authenticated", isAuthenticated);
+  //console.log("logged in user", user);
   const [showMediaIcons, setShowMediaIcons] = useState(false);
+
   return (
     <>
       <nav className="main-nav">
-
-
-        {/* 1st logo part  */}
+        {/* 1st logo part */}
         <div className="logo">
-          <h2>
-            <span>A</span>gro
-            <span>w</span>eather
-          </h2>
+          <img src={logo} alt="Logo" />
         </div>
 
-        {/* 2nd menu part  */}
+        {/* 2nd menu part */}
         <div
           className={
             showMediaIcons ? "menu-link mobile-menu-link" : "menu-link"
           }>
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/" activeClassName="active">Home</Link>
             </li>
             <li>
-              <a href="=Home">Weather</a>
+              <Link to="/Weather" activeClassName="active" >Weather</Link>
             </li>
             <li>
-              <a href="=Home">Information</a>
+            <Link to="/Information" activeClassName="active" >Information</Link>
             </li>
             <li>
               <a href="=Home">About us</a>
             </li>
             <li>
-              <a href="premium">Premium</a>
+              <a href="/Premium">Premium</a>
             </li>
           </ul>
         </div>
@@ -54,28 +53,31 @@ const Navbar = () => {
         {/* 3rd social media links */}
         <div className="social-media">
           <ul>
-              <li>{isAuthenticated && (
+            {isAuthenticated && (
               <li>
                 <p> {user.name} </p>
               </li>
             )}
-            </li>
             &nbsp;
-             {isAuthenticated ? (
+            {isAuthenticated ? (
               <li>
-                <button className="log"
+                <button className="log" style={{ marginRight: 20 }} 
                   onClick={() => logout({ returnTo: window.location.origin })}>
                   Log Out
                 </button>
               </li>
             ) : (
               <li>
-                <button className="log" onClick={() => loginWithRedirect()}>Log In</button>
+                <button className="log" style={{ marginRight: 10 }}  onClick={() => loginWithRedirect()}>User Login</button>
               </li>
             )}
+           
+            <li>
+              <button className="log" style={{ marginRight: 20 }}  onClick={() => loginWithRedirect()}>Admin Login</button>
+            </li>
           </ul>
 
-          {/* hamburget menu start  */}
+          {/* hamburger menu start */}
           <div className="hamburger-menu">
             <a href="#" onClick={() => setShowMediaIcons(!showMediaIcons)}>
               <GiHamburgerMenu />
@@ -83,12 +85,6 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-
-      {/* hero section 
-       <section className="hero-section">
-        <p>Welcome to </p>
-        <h1>Agro Weather</h1>
-      </section>  */}
     </>
   );
 };

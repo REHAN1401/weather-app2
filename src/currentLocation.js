@@ -4,6 +4,7 @@ import Clock from "react-live-clock";
 import Forcast from "./forcast";
 import loader from "./images/WeatherIcons.gif";
 import ReactAnimatedWeather from "react-animated-weather";
+
 const dateBuilder = (d) => {
   let months = [
     "January",
@@ -79,6 +80,7 @@ class Weather extends React.Component {
     this.timerID = setInterval(
       () => this.getWeather(this.state.lat, this.state.lon),
       600000
+    
     );
   }
 
@@ -115,6 +117,7 @@ class Weather extends React.Component {
       humidity: data.main.humidity,
       main: data.weather[0].main,
       country: data.sys.country,
+      
       // sunrise: this.getTimeFromUnixTimeStamp(data.sys.sunrise),
 
       // sunset: this.getTimeFromUnixTimeStamp(data.sys.sunset),

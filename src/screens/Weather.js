@@ -4,9 +4,11 @@ import  "../App.css"
 
 const Weather = () => {
   return (
-    <div className="container">
+    <div className='weather-background'>
+    <div className='container'>
         <CurrentLocation />
       </div>
+     </div> 
   )
 }
 
