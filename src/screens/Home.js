@@ -23,7 +23,7 @@ const Home = () => {
 
   <div className={style.featureBoxes}>            
 
-    <a class={style.textStyle}href>  <div className={style.featureBox}>           {/*weather box*/}
+    <a href="/Weather" class={style.textStyle}>  <div className={style.featureBox} >           {/*weather box*/}
       <bold>  <h2>WEATHER</h2></bold><br></br>
         <p >Get in sync with nature's rhythms using AgroWeather's weather section</p>
         <ul className={style.featureBullets}>

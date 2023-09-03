@@ -102,6 +102,7 @@ h1 {
     text-align: center;
     margin: 5rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
 }
 
 .featureBox:hover {
@@ -161,7 +162,7 @@ h1 {
     font-weight: bold;
     list-style: none;
     font-family:monospace;
-    
+    cursor: pointer;
 }
 
 
@@ -228,8 +229,13 @@ h1 {
     overflow-x: auto;
     padding: 20px;
     margin: 0 auto;
+    transition: transform 0.3s ease;
   }
   
+  .cardSection :hover{
+    transform: scale(1.05s);
+    cursor: pointer;
+  }
   .cardContainer {
     flex: 0 0 auto;
     width: 300px;

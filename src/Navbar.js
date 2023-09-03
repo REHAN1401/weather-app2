@@ -39,20 +39,25 @@ const Navbar = () => {
               <Link to="/Weather" activeClassName="active" >Weather</Link>
             </li>
             <li>
-            <Link to="/Information" activeClassName="active" >Information</Link>
+            <a href="http://localhost:3000">Information</a>
             </li>
             <li>
               <a href="=Home">About us</a>
             </li>
             <li>
-              <a href="/Premium">Premium</a>
+            <Link to="http://localhost:3001/home">Premium</Link>
             </li>
+            
+            <li>
+            <a  href="http://localhost:3000/subscription">My Subcriptions</a>
+            </li>
+
           </ul>
         </div>
 
         {/* 3rd social media links */}
         <div className="social-media">
-          <ul>
+          <ul className="user">
             {isAuthenticated && (
               <li>
                 <p> {user.name} </p>
