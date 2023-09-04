@@ -3,9 +3,7 @@ import Weather from "./screens/Weather";
 import React from 'react'
 import Home from "./screens/Home";
 import Subcriptions from "./subscription";
-import Subcriptions2 from "./subscription2";
-import Subcriptions3 from "./subscription3";
-import Subcriptions4 from "./subscription4";
+
 
 
 function App() {
